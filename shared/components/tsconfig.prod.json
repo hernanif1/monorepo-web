@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "module": "commonjs",
+      "jsx": "react",
+      "declaration": true,
+      "allowJs": false,
+      "isolatedModules": false,
+      "noEmit": false
+    },
+    "exclude": ["**/*.test.tsx", "**/*.stories.tsx", "**/__mocks__"]
+  }
