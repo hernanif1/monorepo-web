@@ -26,5 +26,5 @@ jobs:
       - name: Build components
         run: yarn workspace @monorepo/components build
 
-      - name: Build ${{ matrix.node }}
-        run: yarn workspace @monorepo/${{ matrix.node }} build
+      - name: Build ${{ matrix.app }}
+        run: yarn workspace @monorepo/${{ matrix.app }} build
