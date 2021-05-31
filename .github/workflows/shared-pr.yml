@@ -6,8 +6,11 @@ on:
       - 'shared/**'
 
 jobs:
-  install:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: ["customer", "planner"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,20 +23,8 @@ jobs:
       - name: Install dependencies 
         run: yarn install
   
-  build-components:  
-    needs: install
-    steps:
       - name: Build components
-        run: yarn workspace @monorepo/components tsc
+        run: yarn workspace @monorepo/components build
 
-  build-customer:  
-    needs: install
-    steps:
-      - name: Build customer
-        run: yarn workspace @monorepo/customer build
-
-  build-planner:  
-    needs: install
-    steps:
-      - name: Build planner
-        run: yarn workspace @monorepo/planner build
+      - name: Build ${{ matrix.node }}
+        run: yarn workspace @monorepo/${{ matrix.node }} build
