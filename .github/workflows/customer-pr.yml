@@ -26,6 +26,11 @@ jobs:
           working-directory: customer
           start: yarn workspace @monorepo/components build, yarn start
           wait-on: 'http://localhost:3000'
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
 
   build:
     runs-on: ubuntu-latest
