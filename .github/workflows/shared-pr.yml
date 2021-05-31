@@ -6,9 +6,8 @@ on:
       - 'shared/**'
 
 jobs:
-  deploy:
+  install:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,18 +19,21 @@ jobs:
 
       - name: Install dependencies 
         run: yarn install
-
+  
+  build-components:  
+    needs: install
+    steps:
       - name: Build components
         run: yarn workspace @monorepo/components tsc
 
+  build-customer:  
+    needs: install
+    steps:
       - name: Build customer
         run: yarn workspace @monorepo/customer build
 
+  build-planner:  
+    needs: install
+    steps:
       - name: Build planner
         run: yarn workspace @monorepo/planner build
-
-      - name: Deploy customer
-        run: echo "Customer deployed" 
-
-      - name: Deploy planner
-        run: echo "Planner deployed" 
