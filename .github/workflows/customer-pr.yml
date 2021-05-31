@@ -21,11 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn workspace @monorepo/components build
       - uses: cypress-io/github-action@v2
         with:
           working-directory: customer
-          start: yarn start
+          start: yarn workspace @monorepo/components build, yarn start
           wait-on: 'http://localhost:3000'
 
   build:
