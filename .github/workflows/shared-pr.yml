@@ -7,21 +7,21 @@ on:
 
 jobs:
   unit-tests:
-  runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      app: ["components", "customer", "planner"]
-  steps:
-    uses: actions/checkout@v2
-    uses: actions/setup-node@v1
-    with:
-      node-version: 12.x
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: ["components", "customer", "planner"]
+    steps:
+      uses: actions/checkout@v2
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
 
-    - name: Install ${{ matrix.app }}
-      run: yarn install
+      - name: Install ${{ matrix.app }}
+        run: yarn install
 
-    - name: Build ${{ matrix.app }}
-      run: yarn workspace @monorepo/${{ matrix.app }} test
+      - name: Build ${{ matrix.app }}
+        run: yarn workspace @monorepo/${{ matrix.app }} test
 
   build:
     runs-on: ubuntu-latest
