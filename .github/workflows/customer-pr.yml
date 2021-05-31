@@ -17,6 +17,16 @@ jobs:
       - run: yarn install
       - run: yarn workspace @monorepo/customer test
 
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          working-directory: customer
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+
   build:
     runs-on: ubuntu-latest
     steps:
