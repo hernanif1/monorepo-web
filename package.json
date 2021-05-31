@@ -1,0 +1,15 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/hernanif1/monorepo-web.git",
+  "author": "Hernani Fernandes <hernanif1@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "customer", 
+    "planner", 
+    "shared/helpers",
+    "shared/components"
+  ]
+}

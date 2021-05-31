@@ -1,7 +1,6 @@
-import React from 'react';
 import logo from './logo.svg';
-import {Text} from "components"
-import {Log} from "helpers"
+import {Text} from "@monorepo/components"
+import {Log} from "@monorepo/helpers"
 import './App.css';
 
 function App() {

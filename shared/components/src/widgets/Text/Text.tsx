@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
 const Text = () => (
-  <div>storybook</div>
+  <div>storybook 2</div>
 );
 
 export { Text };
