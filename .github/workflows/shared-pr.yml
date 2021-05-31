@@ -1,4 +1,4 @@
-name: Build preview helpers
+name: Shared pull-request
 
 on:
   pull_request:
@@ -6,17 +6,12 @@ on:
       - 'shared/**'
 
 jobs:
-  deploy:
+  unit-tests:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-
-      - name: Install dependencies 
-        run: yarn install
+      - run: yarn install
+      - run: yarn workspace @monorepo/components test

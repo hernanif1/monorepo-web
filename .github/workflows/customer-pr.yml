@@ -1,0 +1,29 @@
+name: Customer pull-request
+
+on:
+  pull_request:
+    paths:
+      - 'customer/**'
+      - 'shared/**'
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+      - run: yarn workspace @monorepo/customer test
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+      - run: yarn workspace @monorepo/components build
+      - run: yarn workspace @monorepo/customer build
