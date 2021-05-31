@@ -12,10 +12,10 @@ jobs:
       matrix:
         app: ["components", "customer", "planner"]
     steps:
-      uses: actions/checkout@v2
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
 
       - name: Install ${{ matrix.app }}
         run: yarn install
@@ -29,11 +29,11 @@ jobs:
       matrix:
         app: ["customer", "planner"]
     steps:
-      uses: actions/checkout@v2
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-      
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+        
       - name: Install ${{ matrix.app }}
         run: yarn install
 
