@@ -16,12 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-
-      - name: Install ${{ matrix.app }}
-        run: yarn install
-
-      - name: Build ${{ matrix.app }}
-        run: yarn workspace @monorepo/${{ matrix.app }} test
+      - run: yarn install
+      - run: yarn workspace @monorepo/${{ matrix.app }} test
 
   build:
     runs-on: ubuntu-latest
@@ -33,12 +29,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-        
-      - name: Install ${{ matrix.app }}
-        run: yarn install
-
-      - name: Build components
-        run: yarn workspace @monorepo/components build
-
-      - name: Build ${{ matrix.app }}
-        run: yarn workspace @monorepo/${{ matrix.app }} build
+      - run: yarn install
+      - run: yarn workspace @monorepo/components build
+      - run: yarn workspace @monorepo/${{ matrix.app }} build
