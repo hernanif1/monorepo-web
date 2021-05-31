@@ -7,7 +7,8 @@ node_modules
 
 # testing
 coverage
-
+screenshots
+videos
 
 # misc
 .DS_Store

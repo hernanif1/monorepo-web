@@ -17,6 +17,21 @@ jobs:
       - run: yarn install
       - run: yarn workspace @monorepo/customer test
 
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          working-directory: customer
+          start: yarn workspace @monorepo/components build, yarn start
+          wait-on: 'http://localhost:3000'
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: customer-cypress-videos
+          path: customer/cypress/videos
+
   build:
     runs-on: ubuntu-latest
     steps:
