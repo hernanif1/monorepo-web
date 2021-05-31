@@ -20,3 +20,18 @@ jobs:
 
       - name: Install dependencies 
         run: yarn install
+
+      - name: Build components
+        run: yarn workspace @monorepo/components tsc
+
+      - name: Build customer
+        run: yarn workspace @monorepo/customer build
+
+      - name: Build planner
+        run: yarn workspace @monorepo/planner build
+
+      - name: Deploy customer
+        run: echo "Customer deployed" 
+
+      - name: Deploy planner
+        run: echo "Planner deployed" 
