@@ -35,7 +35,7 @@ jobs:
         node-version: 12.x
       
       - name: Install ${{ matrix.app }}
-      run: yarn install
+        run: yarn install
 
       - name: Build components
         run: yarn workspace @monorepo/components build
