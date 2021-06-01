@@ -6,10 +6,23 @@
   "repository": "https://github.com/hernanif1/monorepo-web.git",
   "author": "Hernani Fernandes <hernanif1@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "yarn customer:lint && yarn planner:lint && yarn components:lint && yarn helpers:lint",
+    "customer:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./customer",
+    "planner:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./planner",
+    "components:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared/components",
+    "helpers:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared/helpers"
+  },
   "workspaces": [
-    "customer", 
-    "planner", 
-    "shared/helpers",
-    "shared/components"
-  ]
+    "customer",
+    "planner",
+    "shared/*"
+  ],
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
 }

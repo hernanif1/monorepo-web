@@ -1,4 +1,2 @@
-const Text = ()=> <div>Text</div>
-export {
-    Text
-}
+const Text = () => <div>Text</div>
+export { Text }

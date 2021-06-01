@@ -40,5 +40,6 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install
+      - run: yarn customer:lint
       - run: yarn workspace @monorepo/components build
       - run: yarn workspace @monorepo/customer build

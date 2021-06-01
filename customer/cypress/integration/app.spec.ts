@@ -4,10 +4,10 @@ context('App', () => {
   })
 
   it('should render text', () => {
-    cy.contains("Edit src/App.tsx and save to reload.")
+    cy.contains('Edit src/App.tsx and save to reload.')
   })
 
   it('should click link', () => {
-    cy.get(".App-link").click()
+    cy.get('.App-link').click()
   })
 })
