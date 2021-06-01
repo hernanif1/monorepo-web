@@ -7,11 +7,10 @@
   "author": "Hernani Fernandes <hernanif1@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "yarn customer:lint && yarn planner:lint && yarn components:lint && yarn helpers:lint",
+    "lint": "yarn customer:lint && yarn planner:lint && yarn shared:lint",
     "customer:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./customer",
     "planner:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./planner",
-    "components:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared/components",
-    "helpers:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared/helpers"
+    "shared:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared"
   },
   "workspaces": [
     "customer",

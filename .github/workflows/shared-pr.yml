@@ -14,5 +14,5 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install
-      - run: yarn components:lint && yarn helpers:lint
+      - run: yarn shared:lint
       - run: yarn workspace @monorepo/components test
