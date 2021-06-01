@@ -1,7 +1,5 @@
-import React from "react"
+import React from 'react'
 
-const Text = () => (
-  <div>storybook</div>
-);
+const Text = () => <div>storybook</div>
 
-export { Text };
+export { Text }

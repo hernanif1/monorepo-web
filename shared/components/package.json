@@ -25,10 +25,7 @@
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
+    "extends": "../../.eslintrc.json",
     "overrides": [
       {
         "files": [

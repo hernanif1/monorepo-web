@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
-import { Login } from "./Login"
+import { Story, Meta } from '@storybook/react'
+import { Login } from './Login'
 
 export default {
   title: 'Form/Login',
-  component: Login,
-} as Meta;
+  component: Login
+} as Meta
 
-const Template: Story<{}> = (args) => <Login {...args} />;
+const Template: Story = args => <Login {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
-  variant: 'primary',
-};
+  variant: 'primary'
+}

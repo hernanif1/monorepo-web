@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import {Text} from "@monorepo/components"
-import {Log} from "@monorepo/helpers"
-import './App.css';
+import logo from './logo.svg'
+import { Text } from '@monorepo/components'
+import { Log } from '@monorepo/helpers'
+import './App.css'
 
-function App() {
+const App = () => {
   Log()
   return (
     <div className="App">
@@ -23,7 +23,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
