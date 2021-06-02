@@ -10,7 +10,8 @@
     "lint": "yarn customer:lint && yarn planner:lint && yarn shared:lint",
     "customer:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./customer",
     "planner:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./planner",
-    "shared:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared"
+    "shared:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared",
+    "prepare": "husky install"
   },
   "workspaces": [
     "customer",
@@ -22,6 +23,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^6.0.0"
   }
 }

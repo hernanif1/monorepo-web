@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+CI=true yarn workspace @monorepo/planner test
+CI=true yarn workspace @monorepo/customer test
+yarn lint
